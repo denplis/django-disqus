@@ -5,6 +5,13 @@
 {{ config|safe }}
 {% endblock %}
 </script>
-<script src='http://{{ shortname }}.disqus.com/recent_comments_widget.js?num_items={{ num_items }}&hide_avatars={{ hide_avatars }}&avatar_size={{ avatar_size }}&excerpt_length={{ excerpt_length }}'>
+
+<script type="text/javascript">
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = "('https:' == document.location.protocol ? 'https://' : 'http://'){{ shortname }}.disqus.com/recent_comments_widget.js?num_items={{ num_items }}&hide_avatars={{ hide_avatars }}&avatar_size={{ avatar_size }}&excerpt_length={{ excerpt_length }}";
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
 </script>
 </div>
